@@ -13,7 +13,7 @@
  * Twenty Nineteen only works in WordPress 4.7 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
+	require get_template_directory() . '/includes/back-compat.php';
 	return;
 }
 
@@ -222,8 +222,8 @@ function mixes_twentynineteen_scripts() {
 	wp_style_add_data( 'mixes-twentynineteen-style', 'rtl', 'replace' );
 
 	if ( has_nav_menu( 'menu-1' ) ) {
-		wp_enqueue_script( 'mixes-twentynineteen-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.1', true );
-		wp_enqueue_script( 'mixes-twentynineteen-touch-navigation', get_theme_file_uri( '/js/touch-keyboard-navigation.js' ), array(), '1.1', true );
+		wp_enqueue_script( 'mixes-twentynineteen-priority-menu', get_theme_file_uri( '/assets/js/priority-menu.js' ), array(), '1.1', true );
+		wp_enqueue_script( 'mixes-twentynineteen-touch-navigation', get_theme_file_uri( '/assets/js/touch-keyboard-navigation.js' ), array(), '1.1', true );
 	}
 
 	wp_enqueue_style( 'mixes-twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
@@ -243,7 +243,7 @@ add_action( 'wp_enqueue_scripts', 'mixes_twentynineteen_scripts' );
  * @link https://git.io/vWdr2
  */
 function mixes_twentynineteen_skip_link_focus_fix() {
-	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	// The following is minified via `terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
 	?>
 	<script>
 	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
@@ -261,7 +261,7 @@ function mixes_twentynineteen_editor_customizer_styles() {
 
 	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
 		// Include color patterns.
-		require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
+		require_once get_parent_theme_file_path( '/includes/color-patterns.php' );
 		wp_add_inline_style( 'mixes-twentynineteen-editor-customizer-styles', mixes_twentynineteen_custom_colors_css() );
 	}
 }
@@ -277,7 +277,7 @@ function mixes_twentynineteen_colors_css_wrap() {
 		return;
 	}
 
-	require_once get_parent_theme_file_path( '/inc/color-patterns.php' );
+	require_once get_parent_theme_file_path( '/includes/color-patterns.php' );
 
 	$primary_color = 199;
 	if ( 'default' !== get_theme_mod( 'primary_color', 'default' ) ) {
@@ -305,19 +305,19 @@ require get_template_directory() . '/classes/class-twentynineteen-walker-comment
 /**
  * Enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/includes/template-functions.php';
 
 /**
  * SVG Icons related functions.
  */
-require get_template_directory() . '/inc/icon-functions.php';
+require get_template_directory() . '/includes/icon-functions.php';
 
 /**
  * Custom template tags for the theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/includes/template-tags.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/includes/customizer.php';

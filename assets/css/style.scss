@@ -1,0 +1,29 @@
+/*
+Theme Name: Mixes Twenty Nineteen
+Theme URI: https://github.com/ControlledChaos/mixes-twentynineteen
+Author: Controlled Chaos Design
+Author URI: http://ccdzine.com/
+Description: Fork of the Twenty Nineteen theme for the Monica Mixes website.
+Requires at least: WordPress 4.9.6
+Version: 1.0.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: mixes-twentynineteen
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+
+@import "sass/variables-site/variables-site";
+@import "sass/mixins/mixins-master";
+@import "sass/normalize";
+@import "sass/typography/typography";
+@import "sass/elements/elements";
+@import "sass/forms/forms";
+@import "sass/navigation/navigation";
+@import "sass/modules/accessibility";
+@import "sass/modules/alignments";
+@import "sass/modules/clearings";
+@import "sass/layout/layout";
+@import "sass/site/site";
+@import "sass/site/secondary/widgets";
+@import "sass/blocks/blocks";
+@import "sass/media/media";
